@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="/src/assets/static/favicon.ico" />
+		<link rel="stylesheet" href="/src/assets/styles/main.css" />
+		<script type="importmap">
+			{
+				"imports": {
+					"@components/": "./src/components/",
+					"@config/": "./src/config/",
+					"@locales/": "./src/locales/",
+					"@pages/": "./src/pages/",
+					"@assets/": "./src/assets/"
+				}
+			}
+		</script>
+		<script type="module">
+			import * as dim from 'https://cdn.jsdelivr.net/gh/buelbuel/dim@latest/dist/dim.min.js'
+			window.dim = dim
+		</script>
+		<script type="module" src="/src/index.js"></script>
+		<meta
+			name="description"
+			content="dim is a highly opinionated web component boilerplate."
+		/>
+		<title>dim Template</title>
+	</head>
+	<body>
+		<main id="app"></main>
+
+		<!-- Main Layout Template -->
+		<template id="main-layout">
+			<app-header></app-header>
+			<main id="app-content"></main>
+			<app-footer></app-footer>
+		</template>
+
+		<!-- Alternate Layout Template -->
+		<template id="alternate-layout">
+			<app-header></app-header>
+			<div class="alternate-layout__container">
+				<app-sidebar></app-sidebar>
+				<main id="app-content"></main>
+			</div>
+		</template>
+	</body>
+</html>
